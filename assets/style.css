@@ -1,0 +1,80 @@
+/* Bridgewater Live - site-wide styles */
+
+:root {
+  --navy: #0B2A5C;
+  --navy-dark: #081f45;
+  --gold: #C78F14;
+  --cream: #FBF3E5;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Verdana, Arial, sans-serif;
+  background: var(--cream);
+  color: #1a1a1a;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- Banner ----------
+   Same look as the Bridgewater YOU banner: navy field, a cream glow in the
+   center, and a gold line along the bottom edge. The logo is a transparent
+   PNG floated in the middle, so the glow shows through around it. */
+
+.site-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 16px 24px;
+  border-bottom: 4px solid var(--gold);
+  background-color: var(--navy);
+  background-image: radial-gradient(
+    ellipse 34% 100% at 50% 50%,
+    #F9F2E2 0%,
+    #F5EDD8 25%,
+    #F9F2E2 37%,
+    #CECECC 50%,
+    #96A0AC 62%,
+    #5C6F8D 75%,
+    #25406B 87%,
+    #0A2A5B 100%
+  );
+}
+
+.site-banner a {
+  display: block;
+  line-height: 0;
+}
+
+.banner-logo {
+  display: block;
+  height: clamp(230px, 30vw, 400px);
+  width: auto;
+  max-width: 100%;
+}
+
+/* Phones: widen the glow so the whole logo sits on the cream area. */
+@media (max-width: 700px) {
+  .site-banner {
+    padding: 10px 8px 20px;
+    background-image: radial-gradient(
+      ellipse 90% 100% at 50% 50%,
+      #F9F2E2 0%,
+      #F5EDD8 55%,
+      #CECECC 75%,
+      #96A0AC 88%,
+      #5C6F8D 100%
+    );
+  }
+  .banner-logo {
+    height: auto;
+    width: min(92vw, 360px);
+  }
+}
