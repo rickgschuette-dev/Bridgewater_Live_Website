@@ -183,12 +183,46 @@ main {
 
 .show-title {
   display: block;
-  padding: 0 6px;
+  padding: 0 3px;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--navy);
+  overflow-wrap: break-word;
+}
+
+.schedule-grid tbody td.has-blurb {
+  cursor: help;
+}
+
+.schedule-grid tbody td.has-blurb .show-title {
+  text-decoration: underline dotted var(--navy);
+  text-underline-offset: 3px;
+}
+
+.schedule-grid tbody td.has-blurb:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: -3px;
+}
+
+.show-tip {
+  position: fixed;
+  z-index: 1000;
+  max-width: 280px;
+  padding: 12px 16px;
+  background: var(--navy);
+  color: var(--white);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.show-tip[hidden] {
+  display: none;
 }
 
 /* Planning labels (A1-G19). Delete this rule and the <span class="cell-id"> tags when the grid goes live. */
