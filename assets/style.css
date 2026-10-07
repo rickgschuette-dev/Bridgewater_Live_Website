@@ -55,7 +55,7 @@ a {
 
 .banner-logo {
   display: block;
-  height: clamp(230px, 30vw, 400px);
+  height: clamp(230px, 31vw, 430px);
   width: auto;
   max-width: 100%;
 }
@@ -76,5 +76,144 @@ a {
   .banner-logo {
     height: auto;
     width: min(92vw, 360px);
+  }
+}
+
+/* ---------- Home: live video player ---------- */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(11, 42, 92, 0.3);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.schedule {
+  margin-top: 40px;
+}
+
+.schedule h2 {
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--gold);
+  color: var(--navy);
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.schedule-scroll {
+  margin-top: 20px;
+  overflow-x: auto;
+  border: 1px solid #c9bfa8;
+  border-radius: 8px;
+  background: var(--white);
+  -webkit-overflow-scrolling: touch;
+}
+
+.schedule-grid {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.schedule-grid thead th,
+.schedule-grid .corner {
+  position: sticky;
+  top: 0;
+  background: var(--navy);
+  color: var(--white);
+  border-bottom: 3px solid var(--gold);
+  padding: 12px 6px;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.schedule-grid .corner {
+  width: 96px;
+}
+
+.schedule-grid tbody th {
+  position: sticky;
+  left: 0;
+  width: 96px;
+  background: #f3ead6;
+  color: var(--navy);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+  padding: 0 10px;
+  border-right: 2px solid #c9bfa8;
+}
+
+.schedule-grid tbody td {
+  height: 38px;
+  border-left: 2px solid #d6cdb6;
+  border-top: 2px solid #c9bfa8;
+}
+
+.schedule-grid tbody tr.on-hour td,
+.schedule-grid tbody tr.on-hour th {
+  border-top: 2px solid #8f8467;
+}
+
+.schedule-grid tbody td.show {
+  background: #fbefd2;
+  vertical-align: middle;
+}
+
+.show-title {
+  display: block;
+  padding: 0 6px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+/* Planning labels (A1-G19). Delete this rule and the <span class="cell-id"> tags when the grid goes live. */
+.cell-id {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #9a8f74;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 16px 12px 40px;
   }
 }
