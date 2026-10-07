@@ -225,9 +225,9 @@ main {
   display: none;
 }
 
-/* Planning labels (A1-G19). Delete this rule and the <span class="cell-id"> tags when the grid goes live. */
+/* Planning labels (A1-G19). Hidden for the public site. To see them again while planning, change display: none to display: block. */
 .cell-id {
-  display: block;
+  display: none;
   text-align: center;
   font-size: 0.8rem;
   font-weight: 600;
